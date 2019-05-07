@@ -1,0 +1,6 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle":
+  {
+    "pause": {"down": "PauseDn","up": "PauseUp"}
+  }
+}

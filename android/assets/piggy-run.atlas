@@ -1,0 +1,272 @@
+
+piggy-run.png
+size: 512,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ApplyDn
+  rotate: false
+  xy: 398, 204
+  size: 39, 15
+  orig: 39, 15
+  offset: 0, 0
+  index: -1
+ApplyUp
+  rotate: false
+  xy: 189, 49
+  size: 39, 15
+  orig: 39, 15
+  offset: 0, 0
+  index: -1
+BackGround
+  rotate: false
+  xy: 2, 66
+  size: 240, 180
+  orig: 240, 180
+  offset: 0, 0
+  index: -1
+CancelDn
+  rotate: false
+  xy: 442, 230
+  size: 39, 16
+  orig: 39, 16
+  offset: 0, 0
+  index: -1
+CancelUp
+  rotate: false
+  xy: 110, 21
+  size: 39, 16
+  orig: 39, 16
+  offset: 0, 0
+  index: -1
+Check-off
+  rotate: false
+  xy: 442, 220
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Check-on
+  rotate: false
+  xy: 452, 220
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+ExitButtonDn
+  rotate: false
+  xy: 398, 148
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+ExitButtonUp
+  rotate: false
+  xy: 345, 55
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+ExitWindow
+  rotate: false
+  xy: 244, 106
+  size: 99, 55
+  orig: 99, 55
+  offset: 0, 0
+  index: -1
+Logo
+  rotate: false
+  xy: 2, 2
+  size: 106, 62
+  orig: 106, 62
+  offset: 0, 0
+  index: -1
+NoButtonDn
+  rotate: false
+  xy: 110, 3
+  size: 33, 16
+  orig: 33, 16
+  offset: 0, 0
+  index: -1
+NoButtonUp
+  rotate: false
+  xy: 363, 178
+  size: 33, 16
+  orig: 33, 16
+  offset: 0, 0
+  index: -1
+OptButtonDn
+  rotate: false
+  xy: 186, 15
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+OptButtonUp
+  rotate: false
+  xy: 311, 57
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+OptWindow
+  rotate: false
+  xy: 244, 163
+  size: 117, 83
+  orig: 117, 83
+  offset: 0, 0
+  index: -1
+PauseDn
+  rotate: false
+  xy: 323, 84
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+PauseUp
+  rotate: false
+  xy: 208, 15
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+PlayButtonDn
+  rotate: false
+  xy: 151, 22
+  size: 33, 15
+  orig: 33, 15
+  offset: 0, 0
+  index: -1
+PlayButtonUp
+  rotate: false
+  xy: 363, 161
+  size: 33, 15
+  orig: 33, 15
+  offset: 0, 0
+  index: -1
+ShopButtonDn
+  rotate: false
+  xy: 289, 57
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+ShopButtonUp
+  rotate: false
+  xy: 483, 226
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+Slider
+  rotate: false
+  xy: 244, 69
+  size: 43, 8
+  orig: 43, 8
+  offset: 0, 0
+  index: -1
+Slider-knob
+  rotate: false
+  xy: 433, 190
+  size: 7, 12
+  orig: 7, 12
+  offset: 0, 0
+  index: -1
+Spikes
+  rotate: false
+  xy: 189, 37
+  size: 34, 10
+  orig: 34, 10
+  offset: 0, 0
+  index: -1
+YesButtonDn
+  rotate: false
+  xy: 398, 170
+  size: 33, 15
+  orig: 33, 15
+  offset: 0, 0
+  index: -1
+YesButtonUp
+  rotate: false
+  xy: 398, 187
+  size: 33, 15
+  orig: 33, 15
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: false
+  xy: 363, 221
+  size: 77, 25
+  orig: 77, 25
+  offset: 0, 0
+  index: 1
+cloud
+  rotate: false
+  xy: 110, 39
+  size: 77, 25
+  orig: 77, 25
+  offset: 0, 0
+  index: 2
+cloud
+  rotate: false
+  xy: 244, 79
+  size: 77, 25
+  orig: 77, 25
+  offset: 0, 0
+  index: 3
+coin
+  rotate: false
+  xy: 230, 51
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+ground-center
+  rotate: false
+  xy: 345, 121
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: 1
+ground-center
+  rotate: false
+  xy: 345, 99
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: 2
+ground-center
+  rotate: false
+  xy: 345, 77
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: 3
+ground-edge
+  rotate: false
+  xy: 345, 143
+  size: 10, 18
+  orig: 10, 18
+  offset: 0, 0
+  index: 1
+ground-edge
+  rotate: false
+  xy: 333, 64
+  size: 10, 18
+  orig: 10, 18
+  offset: 0, 0
+  index: 2
+ground-edge
+  rotate: false
+  xy: 420, 150
+  size: 10, 18
+  orig: 10, 18
+  offset: 0, 0
+  index: 3
+piggy
+  rotate: false
+  xy: 363, 196
+  size: 33, 23
+  orig: 33, 23
+  offset: 0, 0
+  index: -1

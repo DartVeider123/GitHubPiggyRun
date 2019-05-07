@@ -1,0 +1,33 @@
+{
+  "com.badlogic.gdx.graphics.Color": {
+    "white": {"a":1,"r":1,"g":1,"b":1}
+  },
+  "com.badlogic.gdx.graphics.g2d.BitmapFont": {
+    "default-font": {"file": "fonts/defaultUI.fnt"},
+    "small-font": {"file": "fonts/smallUI.fnt"}
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle":
+  {
+    "play": {"down": "PlayButtonDn","up": "PlayButtonUp"},
+    "shop": {"down": "ShopButtonDn","up": "ShopButtonUp"},
+    "options": {"down": "OptButtonDn","up": "OptButtonUp"},
+    "exit": {"down": "ExitButtonDn","up": "ExitButtonUp"},
+    "yes": {"down": "YesButtonDn","up": "YesButtonUp"},
+    "no": {"down": "NoButtonDn","up": "NoButtonUp"},
+    "cancel": {"down": "CancelDn", "up": "CancelUp"},
+    "apply": {"down": "ApplyDn", "up": "ApplyUp"}
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
+    "default": { "titleFont": "default-font", "background": "ExitWindow", "titleFontColor": "white" },
+    "options": { "titleFont": "default-font", "background": "OptWindow", "titleFontColor": "white" }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
+    "default": { "checkboxOn": "Check-on", "checkboxOff": "Check-off", "font": "default-font", "fontColor": "white" }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle": {
+    "default-horizontal": { "background": "Slider", "knob": "Slider-knob" }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+    "default": { "font": "default-font", "fontColor": "white" }
+  }
+}
