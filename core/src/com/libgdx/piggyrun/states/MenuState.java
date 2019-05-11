@@ -98,7 +98,7 @@ public class MenuState extends State {
         exitWindow = new Window("Exit Piggy Run?",skin);
         exitWindow.setSize(99,55);
         exitWindow.setPosition(Constants.GUI_WIDTH / 2 - exitWindow.getWidth() / 2, Constants.GUI_HEIGHT / 2 - exitWindow.getHeight() / 2);
-        exitWindow.padTop(11f);
+        exitWindow.padTop(18f);
         exitWindow.getTitleLabel().setAlignment(Align.center,Align.center);
         exitWindow.setMovable(false);
         Label text = new Label("Do you want to exit Piggy Run?", skin, "small-font", "white");
@@ -133,13 +133,13 @@ public class MenuState extends State {
 
     private Table buildOptWindow(){
         skin.getFont("default-font").getData().setScale(0.33f);
-        optWindow = new Window("Options",skin,"options");
-        optWindow.padTop(11f);
+        optWindow = new Window("Options",skin, "options");
+        optWindow.padTop(17f);
         optWindow.getTitleLabel().setAlignment(Align.center,Align.center);
         optWindow.setMovable(false);
         optWindow.setModal(true);
         Table table = new Table();
-        table.pad(10,5,3,5);
+        table.pad(5,5,3,5);
         table.row().padBottom(3);
         table.columnDefaults(0).padRight(5);
         table.columnDefaults(1).padRight(5);
@@ -159,7 +159,7 @@ public class MenuState extends State {
         table.add(checkNotifications);
         table.add(new Label("Push-Notifications",skin)).colspan(2);
         optWindow.add(table).row();
-        optWindow.add(buildOptButtons()).padBottom(5);
+        optWindow.add(buildOptButtons()).padBottom(9);
         optWindow.pack();
         optWindow.setPosition(Constants.GUI_WIDTH / 2 - optWindow.getWidth() / 2, Constants.GUI_HEIGHT / 2 - optWindow.getHeight() / 2);
         optWindow.setVisible(false);

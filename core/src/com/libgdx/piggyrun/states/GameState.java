@@ -1,6 +1,8 @@
 package com.libgdx.piggyrun.states;
 
-import com.badlogic.gdx.Gdx;
+import
+        com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
@@ -17,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.libgdx.piggyrun.PiggyRunMain;
 import com.libgdx.piggyrun.objects.*;
@@ -55,7 +58,8 @@ public class GameState extends State implements InputProcessor {
         stage = new Stage(new FillViewport(Constants.V_WIDTH, Constants.V_HEIGHT,camera),batch);
         stageGUI = new Stage(new FillViewport(Constants.GAME_GUI_WIDTH,Constants.GAME_GUI_HEIGHT),batch);
         Gdx.input.setInputProcessor(new InputMultiplexer(stageGUI,this));
-        skin = new Skin(Gdx.files.internal(Constants.GAME_UISKIN_JSON),new TextureAtlas(Constants.TEXTURE_ATLAS));
+        Gdx.input.setCatchBackKey(true);
+        skin = new Skin(Gdx.files.internal(Constants.UISKIN_JSON),new TextureAtlas(Constants.TEXTURE_ATLAS));
         isFirst = true;
         meters = 0;
         coins = 0;
@@ -75,19 +79,46 @@ public class GameState extends State implements InputProcessor {
         rb2 = new Rectangle();
         viewportUp = 0;
         isTouched = false;
-        buildHudStage();
+        buildGUIStage();
     }
 
-    private void buildHudStage() {
+    private void buildGUIStage() {
         buttonPause = new Button(skin,"pause");
         buttonPause.setSize(23,23);
         buttonPause.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 pause();
+                pauseWindow.setVisible(true);
             }
         });
+        skin.getFont("default-font").getData().setScale(0.6f);
+        pauseWindow = new Window("Paused",skin);
+        pauseWindow.getTitleLabel().setAlignment(Align.center,Align.center);
+        pauseWindow.padTop(23f);
+        Button exitGame = new Button(skin,"exitGame");
+        exitGame.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                game.setScreen(new MenuState(game));
+            }
+        });
+        Button resume = new Button(skin,"play");
+        resume.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                pauseWindow.setVisible(false);
+                resume();
+            }
+        });
+        pauseWindow.add(exitGame).size(49.5f,22.5f).pad(5,13,13,6.5f);
+        pauseWindow.add(resume).size(49.5f,22.5f).pad(5,6.5f,13,13);
+        pauseWindow.pack();
+        pauseWindow.setMovable(false);
+        pauseWindow.setModal(true);
+        pauseWindow.setVisible(false);
         stageGUI.addActor(buttonPause);
+        stageGUI.addActor(pauseWindow);
     }
 
     private void checkCollisions(){
@@ -164,6 +195,15 @@ public class GameState extends State implements InputProcessor {
             }
         }else if(isTouched && pig.jumpingTime == 0 && pig.onCollisionWithGround)
             AudioManager.instance.play(Assets.getInstance().soundAsset.jump,0.8f);
+        if(Gdx.input.isKeyJustPressed(Input.Keys.BACK)) {
+            if(!pauseWindow.isVisible()) {
+                pauseWindow.setVisible(true);
+                pause();
+            }else {
+                pauseWindow.setVisible(false);
+                resume();
+            }
+        }
     }
 
     @Override
@@ -179,9 +219,7 @@ public class GameState extends State implements InputProcessor {
     }
 
     public void update(float deltaTime) {
-        handleInputDebug();
         stage.act();
-        stageGUI.act();
         clouds.act(deltaTime);
         groundManager.act(deltaTime);
         pig.onCollisionWithGround = false;
@@ -210,8 +248,10 @@ public class GameState extends State implements InputProcessor {
 
     @Override
     public void render(float delta) {
+        handleInputDebug();
         if(!isPaused)
         update(delta);
+        stageGUI.act();
         Gdx.gl.glClearColor(0f,0.853f,1f,1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.getViewport().apply();
@@ -231,6 +271,19 @@ public class GameState extends State implements InputProcessor {
         float viewportHeight = ((float) height / width) * Constants.GAME_GUI_WIDTH;
         viewportUp = (Constants.GAME_GUI_HEIGHT - viewportHeight) / 2 + viewportHeight;
         buttonPause.setPosition(270,viewportUp - 30);
+        pauseWindow.setPosition(150 - pauseWindow.getWidth() / 2,150 - pauseWindow.getHeight() / 2);
+    }
+
+    @Override
+    public void pause() {
+        super.pause();
+        pauseWindow.setVisible(true);
+    }
+
+    @Override
+    public void resume() {
+        if(!pauseWindow.isVisible())
+        super.resume();
     }
 
     @Override

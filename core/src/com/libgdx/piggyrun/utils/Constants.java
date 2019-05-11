@@ -11,7 +11,6 @@ public class Constants {
     public final static float GAME_GUI_HEIGHT = 300;
     public final static String TEXTURE_ATLAS = "piggy-run.atlas";
     public final static String UISKIN_JSON = "uiskin.json";
-    public final static String GAME_UISKIN_JSON = "gameuiskin.json";
     public final static Vector2 DEFAULT_VELOCITY = new Vector2(-25f, 0);
     public final static int GROUND_WITH_COINS = 1;
     public final static int GROUND_WITH_SPIKES = 2;

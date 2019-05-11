@@ -15,10 +15,12 @@
     "yes": {"down": "YesButtonDn","up": "YesButtonUp"},
     "no": {"down": "NoButtonDn","up": "NoButtonUp"},
     "cancel": {"down": "CancelDn", "up": "CancelUp"},
-    "apply": {"down": "ApplyDn", "up": "ApplyUp"}
+    "apply": {"down": "ApplyDn", "up": "ApplyUp"},
+    "pause": {"down": "PauseDn","up": "PauseUp"},
+    "exitGame": {"down": "ExitGameBtDn","up": "ExitGameBtUp"}
   },
   "com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
-    "default": { "titleFont": "default-font", "background": "ExitWindow", "titleFontColor": "white" },
+    "default": { "titleFont": "default-font", "background": "DefaultWindow", "titleFontColor": "white" },
     "options": { "titleFont": "default-font", "background": "OptWindow", "titleFontColor": "white" }
   },
   "com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
